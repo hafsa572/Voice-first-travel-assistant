@@ -3,7 +3,7 @@ let activePlace = null;
 let pendingCategory = null;
 let selectedPlace = null;
 
-const RECOMMENDER_API = "http://localhost:5050";
+const RECOMMENDER_API = "https://voice-first-travel-assistant.onrender.com";
 
 // ─── Recommendation Engine ────────────────────────────────────────────────────
 async function fetchSimilarPlaces(placeName, topN = 6) {
