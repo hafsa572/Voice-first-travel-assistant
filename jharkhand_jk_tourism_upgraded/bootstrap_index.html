@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Travel Voice Assistant - Accessible tour guide in Hindi, Hinglish, and English">
+  <title>Travel Voice Assistant — India</title>
+
+  <!-- Bootstrap 5 CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style_bs.css">
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <div class="app-wrapper">
+
+    <!-- ═══ HEADER ═══ -->
+    <header class="app-header">
+      <div class="container-fluid px-3 px-md-4">
+        <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+
+          <div class="brand d-flex align-items-center gap-2">
+            <div class="wave-mark" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+            <h1 class="brand-title mb-0" id="app-title">Travel <em>Voice Assistant</em> </h1>
+          </div>
+
+          <nav class="toolbar d-flex align-items-center gap-2 flex-wrap" aria-label="Accessibility settings">
+            <!-- Language switcher -->
+            <div class="lang-group" role="group" aria-label="Language selection">
+              <button class="btn-lang active" data-lang="en" aria-pressed="true">EN</button>
+              <button class="btn-lang" data-lang="hi" aria-pressed="false">हि</button>
+              <button class="btn-lang" data-lang="hl" aria-pressed="false">HL</button>
+            </div>
+
+            <div class="d-flex gap-1">
+              <button id="contrast-toggle" class="btn-tool" aria-pressed="false" title="Toggle High Contrast">
+                <i class="fa-solid fa-circle-half-stroke"></i>
+              </button>
+              <button id="font-increase" class="btn-tool" title="Increase Text Size" aria-label="Increase text size">
+                <span class="fw-bold small">A+</span>
+              </button>
+              <button id="font-decrease" class="btn-tool" title="Decrease Text Size" aria-label="Decrease text size">
+                <span class="fw-bold small">A-</span>
+              </button>
+              <button id="help-btn" class="btn-tool" title="Help" aria-label="Read help guidelines">
+                <i class="fa-solid fa-circle-question"></i>
+              </button>
+            </div>
+          </nav>
+
+        </div>
+      </div>
+    </header>
+
+    <!-- ═══ MAIN ═══ -->
+    <main id="main-content" class="app-main">
+      <div class="container-fluid px-3 px-md-4 py-3">
+        <div class="row g-3">
+
+          <!-- ── LEFT SIDEBAR ── -->
+          <div class="col-12 col-lg-4 col-xl-3">
+            <div class="d-flex flex-column gap-3">
+
+              <!-- NEARBY PLACES -->
+              <section class="panel-card" aria-label="Nearby places">
+                <div class="panel-card-header d-flex align-items-center justify-content-between">
+                  <h2 class="panel-card-title mb-0">
+                    <i class="fa-solid fa-location-dot me-2 text-accent-orange"></i>
+                    <span data-i18n="nearby_places">Nearby Places</span>
+                  </h2>
+                  <button id="location-btn" class="btn-location" type="button">
+                    <i class="fa-solid fa-location-crosshairs me-1"></i>
+                    <span data-i18n="use_location">My Location</span>
+                  </button>
+                </div>
+                <div id="nearby-places-list" class="nearby-list">
+                  <p class="nearby-empty" data-i18n="nearby_empty">Enable location to see nearby places</p>
+                </div>
+              </section>
+              
+              <!-- SUGGESTION CHIPS (after place selected) -->
+              <div id="suggestion-chips" class="suggestion-chips" aria-label="Follow-up suggestions" style="display:none;"></div>
+
+              <!-- VOICE COMMAND -->
+              <section class="panel-card voice-panel" id="voice-control-panel" aria-label="Voice command controller">
+                <!-- State badge -->
+                <div class="voice-badge" id="voice-state-badge">
+                  <span class="badge-dot"></span>
+                  <span id="voice-state-label" data-i18n="ready">Ready</span>
+                </div>
+
+                <div class="text-center mb-2">
+                  <h2 class="panel-card-title mb-1" data-i18n="voice_command">Voice Command</h2>
+                  <p class="voice-subtext" id="system-instructions" data-i18n="voice_hint">Tap mic or press Spacebar</p>
+                </div>
+
+                <!-- Mic -->
+                <div class="mic-wrap">
+                  <button id="mic-btn" class="btn-mic" aria-label="Start Voice Interaction" aria-describedby="system-instructions" aria-live="polite">
+                    <i class="fa-solid fa-microphone" id="mic-icon"></i>
+                  </button>
+                  <div class="pulse-ring ring-1"></div>
+                  <div class="pulse-ring ring-2"></div>
+                  <div class="pulse-ring ring-3"></div>
+                </div>
+
+                <div id="mic-status-text" class="mic-status" role="status" data-i18n="ready_assist">Ready to assist</div>
+
+                <div class="visualizer-wrap" aria-hidden="true">
+                  <div class="waveform" id="waveform">
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                  </div>
+                </div>
+
+                <div class="shortcut-strip">
+                  <span data-i18n="press">Press</span> <kbd>Space</kbd> <span data-i18n="to_talk">to talk</span>
+                  &nbsp;·&nbsp;
+                  <kbd>Esc</kbd> <span data-i18n="to_stop">to stop</span>
+                </div>
+              </section>
+
+            </div>
+          </div>
+
+          <!-- ── RIGHT CONTENT ── -->
+          <div class="col-12 col-lg-8 col-xl-9">
+            <div class="d-flex flex-column gap-3">
+
+              <!-- DESTINATION CARD -->
+              <section class="panel-card destination-card" id="destination-section" aria-live="polite" aria-label="Destination guide">
+ 
+                <!-- Placeholder state -->
+                <div class="card-placeholder" id="destination-placeholder">
+                  <i class="fa-solid fa-map-location-dot"></i>
+                  <h3 data-i18n="no_place">No Place Selected</h3>
+                  <p data-i18n="speak_prompt">Speak to the assistant or type to explore Jharkhand and Jammu & Kashmir</p>
+
+                      <!-- Quick category chips -->
+                  <div id="hint-buttons" class="hint-chips mt-3" aria-label="Browse by category"></div>
+                </div>
+
+
+                <div id="destination-details" style="display:none;">
+                  <div id="destination-content" style="display:none;">
+
+                    <div class="dest-header">
+                      <div>
+                        <h3 class="place-title" id="place-name">Place Name</h3>
+                        <div class="d-flex gap-2 mt-1 flex-wrap">
+                          <span class="place-badge badge-orange" id="place-badge">State</span>
+                          <span class="place-badge badge-teal" id="category-badge">Tourist Spot</span>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Tabs -->
+                    <div class="detail-tabs" role="tablist">
+                      <button class="detail-tab active" data-view="description" role="tab" aria-selected="true" data-i18n="tab_desc">About</button>
+                      <button class="detail-tab" data-view="images" role="tab" aria-selected="false" data-i18n="tab_images">Images</button>
+                      <button class="detail-tab" data-view="reviews" role="tab" aria-selected="false" data-i18n="tab_reviews">Reviews</button>
+                      <button class="detail-tab" data-view="accessibility" role="tab" aria-selected="false">Accessibility</button>
+                    </div>
+
+                    <div id="description-panel" class="detail-panel active-panel">
+                      <p id="place-description" class="place-desc"></p>
+                    </div>
+
+                    <div id="images-panel" class="detail-panel">
+                      <div class="image-carousel-container" id="image-carousel-container" style="display:none;">
+                        <button class="carousel-btn carousel-prev" id="carousel-prev" type="button">
+                          <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <div class="carousel-track">
+                          <img id="carousel-image" class="carousel-img" src="" alt="Tourist place image">
+                          <div class="carousel-counter" id="carousel-counter"></div>
+                        </div>
+                        <button class="carousel-btn carousel-next" id="carousel-next" type="button">
+                          <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                      </div>
+                    </div>
+
+                    <div id="reviews-panel" class="detail-panel">
+                      <div id="rating-container" class="rating-summary">
+                        <div class="rating-summary-main">
+                          <span class="rating-value" id="place-rating">No rating recorded</span>
+                          <span class="rating-stars" id="place-rating-stars" aria-hidden="true"></span>
+                        </div>
+                        <span class="sentiment-badge" id="review-sentiment"></span>
+                      </div>
+                      <div id="reviews-container" class="reviews-wrap">Reviews will appear here.</div>
+                    </div>
+
+                    <div id="accessibility-panel" class="detail-panel">
+                      <div class="accessibility-box">
+                        <i class="fa-solid fa-universal-access me-2"></i>
+                        <span data-i18n="accessibility">Accessibility Guide</span>
+                      </div>
+                      <p class="accessibility-text" id="place-accessibility"></p>
+                    </div>
+
+                  </div>
+                </div>
+              </section>
+
+              <!-- CHAT / CONVERSATION LOG -->
+              <section class="panel-card chat-card" aria-label="Conversation log">
+                <div class="chat-header">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="fa-solid fa-comments text-accent-orange"></i>
+                    <h2 class="panel-card-title mb-0" data-i18n="conv_log">Chat Log</h2>
+                    <div class="voice-log-link" id="voice-log-link">
+                      <span class="link-dot"></span>
+                    </div>
+                  </div>
+                  <button id="clear-transcript-btn" class="btn-clear" aria-label="Clear conversation log">
+                    <i class="fa-solid fa-trash-can me-1"></i>
+                    <span data-i18n="clear">Clear</span>
+                  </button>
+                </div>
+
+                <div class="chat-log" id="transcript-logs">
+                  <div class="msg-bubble msg-assistant" data-i18n="welcome_msg">
+                    Hello! I am your Voice-first Tourism Assistant. Tap the mic or type to explore destinations. Switch to Hindi or Hinglish using the buttons above!
+                  </div>
+                </div>
+
+                <div id="chat-form" class="chat-input-bar" role="form" aria-label="Type your message">
+                  <input type="text" id="chat-input" class="chat-input" data-i18n-placeholder="type_query" placeholder="Ask about any place..." aria-label="Message text box">
+                  <button type="button" id="chat-submit-btn" class="btn-send" aria-label="Send message">
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+
+                <!-- Bottom toolbar (mobile) -->
+                <div class="chat-footer-tools d-flex d-lg-none justify-content-around py-2 border-top border-subtle">
+                  <button id="help-btn-mobile" class="btn-footer-tool">
+                    <i class="fa-solid fa-circle-question"></i>
+                    <span>Help</span>
+                  </button>
+                  <button id="contrast-toggle-mobile" class="btn-footer-tool">
+                    <i class="fa-solid fa-circle-half-stroke"></i>
+                    <span>Contrast</span>
+                  </button>
+                  <button id="font-increase-mobile" class="btn-footer-tool">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                    <span>A+</span>
+                  </button>
+                  <button id="font-decrease-mobile" class="btn-footer-tool">
+                    <i class="fa-solid fa-magnifying-glass-minus"></i>
+                    <span>A-</span>
+                  </button>
+                </div>
+
+              </section>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </main>
+
+  </div><!-- /.app-wrapper -->
+
+  <!-- Bootstrap 5 JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+  <script src="jhardb.js"></script>
+  <script src="services_db.js"></script>
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

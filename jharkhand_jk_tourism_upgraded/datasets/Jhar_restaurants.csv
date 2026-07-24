@@ -1,0 +1,26 @@
+Restaurant_name,District,Cuisine Type,Pure Veg,Meal Type,Avg price,Timing,Rating,Nearest Landmark,Recommended For
+Kaveri Restaurant,Ranchi,"South Indian, North Indian",No,"Lunch, Dinner",600,11AM-10:30PM,4.3,Firayalal Chowk,"Family, Vegetarian"
+Tandoor Express,Ranchi,"Mughlai, North Indian",No,"Lunch, Dinner",900,12PM-11PM,4.1,Main Road,Non-veg lovers
+Hotel Yatri,Ranchi,"Jharkhand Tribal, Indian",No,"Breakfast, Lunch, Dinner",400,7AM-10PM,4.4,Upper Bazar,Local food lovers
+China Town,Ranchi,"Chinese, Thai",No,"Lunch, Dinner",700,12PM-10PM,4,Harmu,"Youth, Couples"
+Rajdhani Thali,Ranchi,"Rajasthani, Gujarati",Yes,"Lunch, Dinner",550,"11AM-3PM, 7PM-10:30PM",4.5,Albert Ekka Chowk,"Vegetarian, Family"
+Pind Balluchi,Jamshedpur,"Punjabi, North Indian",No,"Lunch, Dinner",1000,12PM-11PM,4.2,Bistupur,"Family, Group"
+Copper Chimney,Jamshedpur,Multi-cuisine,No,"Breakfast, Lunch, Dinner",1200,8AM-11PM,4.4,Bistupur,"Couples, Business"
+Hotel Apsara,Jamshedpur,"Odia, Bengali, Indian",No,"Lunch, Dinner",500,11AM-10PM,4,Sakchi,"Local, Budget"
+Domino's Jamshedpur,Jamshedpur,"Fast Food, Pizza",No,All Day,600,10AM-11PM,3.9,Bistupur,"Youth, Teens"
+Baidyanath Bhojanalaya,Deoghar,"Pure Veg, Indian",Yes,"Breakfast, Lunch, Dinner",300,6AM-9PM,4.3,Baidyanath Dham,"Pilgrims, Families"
+Hotel Nandan,Deoghar,"North Indian, Chinese",No,"Lunch, Dinner",700,12PM-10:30PM,3.8,Nandan Pahar,"Family, Tourists"
+Jungle View Restaurant,Hazaribagh,"Tribal, North Indian",No,"Lunch, Dinner",500,12PM-9:30PM,4.2,Hazaribagh Wildlife Sanctuary,Nature Lovers
+Chaska Restaurant,Dhanbad,"Mughlai, Chinese, Indian",No,"Lunch, Dinner",800,12PM-10PM,3.9,Bank More,"Youth, Family"
+Litti Corner,Dhanbad,Jharkhand Street Food,No,"Snacks, Dinner",150,4PM-10PM,4.6,Hirapur,Street Food Lovers
+Paraghat Dhaba,Giridih,"North Indian, Desi",No,"Lunch, Dinner",350,10AM-10PM,4,NH-2 Highway,"Travellers, Budget"
+Rajrappa Prasad Bhoj,Ramgarh,"Pure Veg, Indian",Yes,"Breakfast, Lunch",250,6AM-2PM,4.4,Rajrappa Temple,Pilgrims
+Netarhat Canteen,Netarhat,"Indian, Snacks",Yes,"Breakfast, Lunch, Snacks",300,7AM-8PM,3.8,Netarhat Viewpoint,"Tourists, Trekkers"
+Dimna Lake Eatery,Jamshedpur,"Snacks, Beverages",Yes,Snacks,200,8AM-7PM,4,Dimna Lake,"Families, Picnickers"
+Sai Veg Restaurant,Bokaro,"South Indian, Veg",Yes,"Breakfast, Lunch, Dinner",400,7AM-10PM,4.1,Sector 4,"Vegetarian, Family"
+Patratu Lakeside Cafe,Patratu,"Snacks, Indian",No,"Snacks, Lunch",350,9AM-7PM,4.3,Patratu Lake,"Tourists, Couples"
+Rugda Fest Stall,Ranchi,Tribal Seasonal,Yes,Snacks,100,Oct-Dec: 8AM-6PM,4.8,Ranchi Main Market,"Foodies, Locals"
+Masala Trail,Ranchi,"Continental, Indian",No,"Brunch, Dinner",1100,11AM-11PM,4.2,Lalpur,"Couples, Youth"
+Angara Dhaba,Angara,"Desi, Tribal",No,"Lunch, Dinner",300,10AM-9PM,4,Angara Village,"Travellers, Locals"
+Shantiniketan Bhoj,Dumka,"Bengali, Indian",No,"Lunch, Dinner",450,11AM-9PM,3.8,Dumka Town Centre,Bengali food lovers
+Pal Palace Restaurant,Bokaro,"Mughlai, North Indian",No,"Lunch, Dinner",800,12PM-10:30PM,4,City Centre,"Family, Group"
