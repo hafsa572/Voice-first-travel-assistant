@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="hi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Travel Voice Assistant - Accessible tour guide in Hindi, Hinglish, and English">
-  <title>Travel Voice Assistant — India Kashmir</title>
+  <title>Travel Voice Assistant — India</title>
 
   <!-- Bootstrap 5 CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css">
@@ -12,7 +13,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Sora:wght@400;600;700&display=swap"
+    rel="stylesheet">
   <!-- Custom Styles -->
   <link rel="stylesheet" href="style_bs.css">
 </head>
@@ -87,9 +90,10 @@
                   <p class="nearby-empty" data-i18n="nearby_empty">Enable location to see nearby places</p>
                 </div>
               </section>
-              
+
               <!-- SUGGESTION CHIPS (after place selected) -->
-              <div id="suggestion-chips" class="suggestion-chips" aria-label="Follow-up suggestions" style="display:none;"></div>
+              <div id="suggestion-chips" class="suggestion-chips" aria-label="Follow-up suggestions"
+                style="display:none;"></div>
 
               <!-- VOICE COMMAND -->
               <section class="panel-card voice-panel" id="voice-control-panel" aria-label="Voice command controller">
@@ -106,7 +110,8 @@
 
                 <!-- Mic -->
                 <div class="mic-wrap">
-                  <button id="mic-btn" class="btn-mic" aria-label="Start Voice Interaction" aria-describedby="system-instructions" aria-live="polite">
+                  <button id="mic-btn" class="btn-mic" aria-label="Start Voice Interaction"
+                    aria-describedby="system-instructions" aria-live="polite">
                     <i class="fa-solid fa-microphone" id="mic-icon"></i>
                   </button>
                   <div class="pulse-ring ring-1"></div>
@@ -114,13 +119,20 @@
                   <div class="pulse-ring ring-3"></div>
                 </div>
 
-                <div id="mic-status-text" class="mic-status" role="status" data-i18n="ready_assist">Ready to assist</div>
+                <div id="mic-status-text" class="mic-status" role="status" data-i18n="ready_assist">Ready to assist
+                </div>
 
                 <div class="visualizer-wrap" aria-hidden="true">
                   <div class="waveform" id="waveform">
-                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
-                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
-                    <div class="wave-bar"></div><div class="wave-bar"></div><div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
+                    <div class="wave-bar"></div>
                   </div>
                 </div>
 
@@ -139,15 +151,17 @@
             <div class="d-flex flex-column gap-3">
 
               <!-- DESTINATION CARD -->
-              <section class="panel-card destination-card" id="destination-section" aria-live="polite" aria-label="Destination guide">
- 
+              <section class="panel-card destination-card" id="destination-section" aria-live="polite"
+                aria-label="Destination guide">
+
                 <!-- Placeholder state -->
                 <div class="card-placeholder" id="destination-placeholder">
                   <i class="fa-solid fa-map-location-dot"></i>
                   <h3 data-i18n="no_place">No Place Selected</h3>
-                  <p data-i18n="speak_prompt">Speak to the assistant or type to explore Jharkhand and Jammu & Kashmir</p>
+                  <p data-i18n="speak_prompt">Speak to the assistant or type to explore Jharkhand and Jammu & Kashmir
+                  </p>
 
-                      <!-- Quick category chips -->
+                  <!-- Quick category chips -->
                   <div id="hint-buttons" class="hint-chips mt-3" aria-label="Browse by category"></div>
                 </div>
 
@@ -167,10 +181,14 @@
 
                     <!-- Tabs -->
                     <div class="detail-tabs" role="tablist">
-                      <button class="detail-tab active" data-view="description" role="tab" aria-selected="true" data-i18n="tab_desc">About</button>
-                      <button class="detail-tab" data-view="images" role="tab" aria-selected="false" data-i18n="tab_images">Images</button>
-                      <button class="detail-tab" data-view="reviews" role="tab" aria-selected="false" data-i18n="tab_reviews">Reviews</button>
-                      <button class="detail-tab" data-view="accessibility" role="tab" aria-selected="false">Accessibility</button>
+                      <button class="detail-tab active" data-view="description" role="tab" aria-selected="true"
+                        data-i18n="tab_desc">About</button>
+                      <button class="detail-tab" data-view="images" role="tab" aria-selected="false"
+                        data-i18n="tab_images">Images</button>
+                      <button class="detail-tab" data-view="reviews" role="tab" aria-selected="false"
+                        data-i18n="tab_reviews">Reviews</button>
+                      <button class="detail-tab" data-view="accessibility" role="tab"
+                        aria-selected="false">Accessibility</button>
                     </div>
 
                     <div id="description-panel" class="detail-panel active-panel">
@@ -233,12 +251,14 @@
 
                 <div class="chat-log" id="transcript-logs">
                   <div class="msg-bubble msg-assistant" data-i18n="welcome_msg">
-                    Hello! I am your Voice-first Tourism Assistant. Tap the mic or type to explore destinations. Switch to Hindi or Hinglish using the buttons above!
+                    Hello! I am your Voice-first Tourism Assistant. Tap the mic or type to explore destinations. Switch
+                    to Hindi or Hinglish using the buttons above!
                   </div>
                 </div>
 
                 <div id="chat-form" class="chat-input-bar" role="form" aria-label="Type your message">
-                  <input type="text" id="chat-input" class="chat-input" data-i18n-placeholder="type_query" placeholder="Ask about any place..." aria-label="Message text box">
+                  <input type="text" id="chat-input" class="chat-input" data-i18n-placeholder="type_query"
+                    placeholder="Ask about any place..." aria-label="Message text box">
                   <button type="button" id="chat-submit-btn" class="btn-send" aria-label="Send message">
                     <i class="fa-solid fa-paper-plane"></i>
                   </button>
@@ -282,4 +302,5 @@
   <script src="i18n.js"></script>
   <script src="app.js"></script>
 </body>
+
 </html>
